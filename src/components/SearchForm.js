@@ -1,10 +1,12 @@
 import React, { Component } from "react";
+import SearchContainer from "./SearchContainer.js";
 import { Button, Input, Dropdown } from "semantic-ui-react";
 
 export default class SearchForm extends Component {
   state = {
     keyword: undefined,
-    category: undefined
+    category: undefined,
+    searchResults: undefined
   };
 
   handleKeywordChange = e => {
@@ -28,6 +30,7 @@ export default class SearchForm extends Component {
       .then(resp => resp.json())
       .then(data => {
         console.log(data);
+        this.setState({ searchResults: data.hits });
       });
   };
 
@@ -56,21 +59,26 @@ export default class SearchForm extends Component {
     ];
     return (
       <div>
-        {" "}
-        <Input
-          focus
-          maxLength="100"
-          placeholder="Keywords..."
-          onChange={this.handleKeywordChange}
-        />{" "}
-        <br />
-        <Dropdown
-          onChange={this.handleCategoryChange}
-          options={categories}
-          placeholder="Category..."
-        />
-        <br />
-        <Button onClick={this.handleClick}> Search </Button>
+        <div>
+          {" "}
+          <Input
+            focus
+            maxLength="100"
+            placeholder="Keywords..."
+            onChange={this.handleKeywordChange}
+          />{" "}
+          <br />
+          <Dropdown
+            onChange={this.handleCategoryChange}
+            options={categories}
+            placeholder="Category..."
+          />
+          <br />
+          <Button onClick={this.handleClick}> Search </Button>
+        </div>
+        <div>
+          <SearchContainer searchResults={this.state.searchResults} />
+        </div>
       </div>
     );
   }
