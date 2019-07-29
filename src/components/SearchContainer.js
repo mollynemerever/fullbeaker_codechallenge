@@ -13,6 +13,9 @@ export default class SearchContainer extends Component {
             img={result.webformatURL}
             favorites={result.favorites}
             likes={result.likes}
+            link={result.pageURL}
+            id={result.id}
+            saveImage={this.props.saveImage}
           />
         );
       });

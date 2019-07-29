@@ -77,7 +77,10 @@ export default class SearchForm extends Component {
           <Button onClick={this.handleClick}> Search </Button>
         </div>
         <div>
-          <SearchContainer searchResults={this.state.searchResults} />
+          <SearchContainer
+            searchResults={this.state.searchResults}
+            saveImage={this.props.saveImage}
+          />
         </div>
       </div>
     );
