@@ -9,7 +9,7 @@ export default class SearchContainer extends Component {
         return (
           <SearchResult
             key={index}
-            tags={result.tags}
+            tags={result.tags.split(",")}
             img={result.webformatURL}
             favorites={result.favorites}
             likes={result.likes}
