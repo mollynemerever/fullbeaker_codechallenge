@@ -9,19 +9,26 @@ export default class SearchForm extends Component {
 
   handleKeywordChange = e => {
     e.preventDefault();
-    this.setState({ keyword: e.target.value });
-    console.log(e.target.value);
+    let state = e.target.value.replace(/\W/g, "+");
+    this.setState({ keyword: state });
   };
 
   handleCategoryChange = (e, value) => {
     e.preventDefault();
     this.setState({ category: value.value });
-    console.log(value.value);
   };
 
   handleClick = e => {
     e.preventDefault();
     alert(`${this.state.keyword}, ${this.state.category}`);
+    let url = `https://pixabay.com/api/?key=${
+      process.env.REACT_APP_API_KEY
+    }&q=${this.state.keyword}&image_type=photo&category=${this.state.category}`;
+    fetch(url)
+      .then(resp => resp.json())
+      .then(data => {
+        console.log(data);
+      });
   };
 
   render() {
@@ -52,6 +59,7 @@ export default class SearchForm extends Component {
         {" "}
         <Input
           focus
+          maxLength="100"
           placeholder="Keywords..."
           onChange={this.handleKeywordChange}
         />{" "}
