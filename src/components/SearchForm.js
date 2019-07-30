@@ -9,6 +9,14 @@ export default class SearchForm extends Component {
     searchResults: undefined
   };
 
+  componentDidMount = () => {
+    if (window.localStorage.searchResults) {
+      this.setState({
+        searchResults: JSON.parse(window.localStorage.getItem("searchResults"))
+      });
+    }
+  };
+
   handleKeywordChange = e => {
     e.preventDefault();
     let state = e.target.value.replace(/\W/g, "+");
@@ -30,7 +38,12 @@ export default class SearchForm extends Component {
       .then(resp => resp.json())
       .then(data => {
         console.log(data);
-        this.setState({ searchResults: data.hits });
+        this.setState({ searchResults: data.hits }, () => {
+          window.localStorage.setItem(
+            "searchResults",
+            JSON.stringify(this.state.searchResults)
+          );
+        });
       });
   };
 
@@ -75,6 +88,7 @@ export default class SearchForm extends Component {
           />
           <br />
           <Button onClick={this.handleClick}> Search </Button>
+          <Button> Clear Results </Button>
         </div>
         <div>
           <SearchContainer
