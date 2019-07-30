@@ -13,10 +13,15 @@ export default class Welcome extends Component {
       return <Redirect to="/search" />;
     }
     return (
-      <div>
-        <h1>Welcome to ImgSearcher</h1>
-        <h4>You never know what you might find </h4>
-        <Button onClick={this.handleClick}> Get Searchin'</Button>
+      <div className="welcome-parent">
+        <div className="welcome">
+          <h1>Welcome to Image Searcher</h1>
+          <h4>You Never Know What You Might Find </h4>
+          <Button onClick={this.handleClick} basic color="red">
+            {" "}
+            Get Searchin'
+          </Button>
+        </div>
       </div>
     );
   }

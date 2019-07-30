@@ -31,8 +31,14 @@ export default class Homepage extends Component {
 
   render() {
     return (
-      <div>
-        <Button as={Link} to="/welcome" onClick={this.clearLocalStorage}>
+      <div className="search-page">
+        <Button
+          as={Link}
+          to="/welcome"
+          onClick={this.clearLocalStorage}
+          basic
+          color="red"
+        >
           {" "}
           Exit{" "}
         </Button>

@@ -82,6 +82,7 @@ export default class SearchForm extends Component {
           {" "}
           <Input
             focus
+            basic
             maxLength="100"
             placeholder="Keywords..."
             onChange={this.handleKeywordChange}
@@ -94,11 +95,19 @@ export default class SearchForm extends Component {
             value={this.state.category}
           />
           <br />
-          <Button type="submit" onClick={this.handleSearchClick}>
+          <Button
+            type="submit"
+            onClick={this.handleSearchClick}
+            basic
+            color="red"
+          >
             {" "}
             Search{" "}
           </Button>
-          <Button onClick={this.clearResults}> Clear Results </Button>
+          <Button onClick={this.clearResults} basic color="red">
+            {" "}
+            Clear Results{" "}
+          </Button>
         </div>
         <div>
           <SearchContainer
