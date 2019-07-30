@@ -42,7 +42,7 @@ export default class Homepage extends Component {
           {" "}
           Exit{" "}
         </Button>
-        <h1> Discover </h1>
+
         <div className="columns">
           <SearchForm saveImage={this.saveImage} />
           <SavedImagesContainer savedImages={this.state.savedImages} />
