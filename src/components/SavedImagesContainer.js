@@ -12,6 +12,12 @@ export default class SavedImagesContainer extends Component {
       });
     }
 
-    return <div> {saved}</div>;
+    return (
+      <div className="saved-images">
+        {" "}
+        <h4> Saved Images </h4>
+        {saved}
+      </div>
+    );
   }
 }

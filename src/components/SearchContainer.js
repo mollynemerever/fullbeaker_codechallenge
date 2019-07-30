@@ -20,13 +20,8 @@ export default class SearchContainer extends Component {
         );
       });
     } else {
-      display = "no search results";
+      display = "No Search Results";
     }
-    return (
-      <div>
-        <p>search container to hold each result</p>
-        {display}
-      </div>
-    );
+    return <div className="search-container">{display}</div>;
   }
 }
