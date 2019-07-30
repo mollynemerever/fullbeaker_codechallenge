@@ -4,8 +4,8 @@ import { Button, Input, Dropdown } from "semantic-ui-react";
 
 export default class SearchForm extends Component {
   state = {
-    keyword: undefined,
-    category: undefined,
+    keyword: "",
+    category: "",
     searchResults: undefined
   };
 
@@ -28,9 +28,8 @@ export default class SearchForm extends Component {
     this.setState({ category: value.value });
   };
 
-  handleClick = e => {
+  handleSearchClick = e => {
     e.preventDefault();
-    alert(`${this.state.keyword}, ${this.state.category}`);
     let url = `https://pixabay.com/api/?key=${
       process.env.REACT_APP_API_KEY
     }&q=${this.state.keyword}&image_type=photo&category=${this.state.category}`;
@@ -38,6 +37,7 @@ export default class SearchForm extends Component {
       .then(resp => resp.json())
       .then(data => {
         console.log(data);
+        this.setState({ keyword: "", category: "" });
         this.setState({ searchResults: data.hits }, () => {
           window.localStorage.setItem(
             "searchResults",
@@ -45,6 +45,12 @@ export default class SearchForm extends Component {
           );
         });
       });
+  };
+
+  clearResults = e => {
+    e.preventDefault();
+    this.setState({ searchResults: undefined });
+    window.localStorage.removeItem("searchResults");
   };
 
   render() {
@@ -79,16 +85,21 @@ export default class SearchForm extends Component {
             maxLength="100"
             placeholder="Keywords..."
             onChange={this.handleKeywordChange}
+            value={this.state.keyword}
           />{" "}
           <br />
           <Dropdown
             onChange={this.handleCategoryChange}
             options={categories}
             placeholder="Category..."
+            value={this.state.category}
           />
           <br />
-          <Button onClick={this.handleClick}> Search </Button>
-          <Button> Clear Results </Button>
+          <Button type="submit" onClick={this.handleSearchClick}>
+            {" "}
+            Search{" "}
+          </Button>
+          <Button onClick={this.clearResults}> Clear Results </Button>
         </div>
         <div>
           <SearchContainer
