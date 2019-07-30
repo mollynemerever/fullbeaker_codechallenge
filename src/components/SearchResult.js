@@ -5,7 +5,7 @@ export default class SearchResult extends Component {
   render() {
     let tags = this.props.tags.map((tag, index) => {
       return (
-        <Label tag key={index}>
+        <Label tag key={index} color="teal">
           {" "}
           {tag}{" "}
         </Label>
@@ -17,9 +17,15 @@ export default class SearchResult extends Component {
         <Item className="search-result">
           <Item.Image size="medium" src={this.props.img} />
           <Item.Content>
-            <Icon name="heart">{this.props.favorites} </Icon>
+            <Icon name="heart" color="red">
+              {" "}
+              {this.props.favorites}{" "}
+            </Icon>
             <br />
-            <Icon name="thumbs up">{this.props.likes} </Icon>
+            <Icon name="thumbs up" color="blue">
+              {" "}
+              {this.props.likes}{" "}
+            </Icon>
             <br />
             {tags}
             <Button
@@ -29,6 +35,8 @@ export default class SearchResult extends Component {
                   link: this.props.link
                 })
               }
+              basic
+              color="red"
             >
               {" "}
               Save{" "}

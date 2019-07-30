@@ -3,6 +3,7 @@
   text-align: center;
   padding: 2%;
   margin: 2%;
+  background-color: #ffffff;
 }
 
 .search-container {
@@ -17,12 +18,14 @@
   margin: auto;
   text-align: center;
   padding: 2%;
+  background-color: #ffffff;
 }
 
 .saved-images {
   border-style: groove;
   width: 20%;
   float: right;
+  background-color: #ffffff;
 }
 
 .columns {
