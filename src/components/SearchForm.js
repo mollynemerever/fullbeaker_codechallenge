@@ -81,7 +81,6 @@ export default class SearchForm extends Component {
         <div className="search-form">
           {" "}
           <Input
-            basic
             maxLength="100"
             placeholder="Keywords..."
             onChange={this.handleKeywordChange}
