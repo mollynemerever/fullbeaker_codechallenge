@@ -20,7 +20,7 @@ export default class SearchContainer extends Component {
         );
       });
     } else {
-      display = "No Search Results";
+      display = "Waiting For Images...";
     }
     return <div className="search-container">{display}</div>;
   }
