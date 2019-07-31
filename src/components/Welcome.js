@@ -17,7 +17,7 @@ export default class Welcome extends Component {
         <div className="welcome">
           <h1>Welcome to Image Searcher</h1>
           <h4>You Never Know What You Might Find </h4>
-          <Button onClick={this.handleClick} basic color="red">
+          <Button onClick={this.handleClick} basic color="blue">
             {" "}
             Get Searchin'
           </Button>

@@ -18,12 +18,11 @@ export default class SearchResult extends Component {
       <div>
         <Item className="search-result">
           <Item.Image size="medium" src={this.props.img} />
-
           <Item.Content className="item-content">
-            <Icon name="heart" center="true" color="red">
+            <Icon name="heart" center="true" color="red" className="heart">
               {" "}
               {this.props.favorites}{" "}
-            </Icon>{" "}
+            </Icon>
             <Icon name="thumbs up" center="true" color="blue">
               {" "}
               {this.props.likes}{" "}
