@@ -17,7 +17,7 @@ export default class SearchResult extends Component {
     return (
       <div>
         <Item className="search-result">
-          <Item.Image size="medium" src={this.props.img} className="image" />
+          <Item.Image size="medium" src={this.props.img} />
 
           <Item.Content className="item-content">
             <Icon name="heart" center="true" color="red">
