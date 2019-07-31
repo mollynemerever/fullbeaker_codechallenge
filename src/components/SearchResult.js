@@ -5,28 +5,29 @@ export default class SearchResult extends Component {
   render() {
     let tags = this.props.tags.map((tag, index) => {
       return (
-        <Label tag key={index} color="teal">
-          {" "}
-          {tag}{" "}
-        </Label>
+        <div className="tags">
+          <Label tag key={index} color="teal">
+            {" "}
+            {tag}{" "}
+          </Label>
+        </div>
       );
     });
 
     return (
       <div>
         <Item className="search-result">
-          <Item.Image size="medium" src={this.props.img} />
-          <Item.Content>
-            <Icon name="heart" color="red">
+          <Item.Image size="medium" src={this.props.img} className="image" />
+
+          <Item.Content className="item-content">
+            <Icon name="heart" center="true" color="red">
               {" "}
               {this.props.favorites}{" "}
-            </Icon>
-            <br />
-            <Icon name="thumbs up" color="blue">
+            </Icon>{" "}
+            <Icon name="thumbs up" center="true" color="blue">
               {" "}
               {this.props.likes}{" "}
             </Icon>
-            <br />
             {tags}
             <Button
               onClick={e =>
@@ -36,7 +37,7 @@ export default class SearchResult extends Component {
                 })
               }
               basic
-              color="red"
+              color="blue"
             >
               {" "}
               Save{" "}

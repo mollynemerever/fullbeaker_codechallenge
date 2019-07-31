@@ -37,7 +37,8 @@ export default class Homepage extends Component {
           to="/welcome"
           onClick={this.clearLocalStorage}
           basic
-          color="red"
+          color="blue"
+          className="exit-button"
         >
           {" "}
           Exit{" "}
