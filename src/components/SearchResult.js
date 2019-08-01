@@ -5,7 +5,7 @@ export default class SearchResult extends Component {
   render() {
     let tags = this.props.tags.map((tag, index) => {
       return (
-        <div className="tags">
+        <div className="tags" key={index}>
           <Label tag key={index} color="teal">
             {" "}
             {tag}{" "}
