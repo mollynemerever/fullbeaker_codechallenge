@@ -5,9 +5,6 @@ import Welcome from "./components/Welcome.js";
 import Homepage from "./components/Homepage.js";
 
 export default class App extends Component {
-  // componentDidMount = () => {
-  //   ;
-  // };
   render() {
     return (
       <Router>
