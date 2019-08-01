@@ -9,4 +9,5 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 1. Clone from this Repo
 2. `npm install`
 3. `npm start`
-4. Get Searchin'!
+4. Navigate to `/welcome` following your localhost url
+5. Get Searchin'!
