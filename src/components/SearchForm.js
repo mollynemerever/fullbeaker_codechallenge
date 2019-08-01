@@ -40,7 +40,7 @@ export default class SearchForm extends Component {
       Accept: "application/json",
       "Content-Type": "application/json"
     };
-    fetch(url, config.headers)
+    fetch(url, config)
       .then(resp => resp.json())
       .then(data => {
         this.setState({ keyword: "", category: "" });
