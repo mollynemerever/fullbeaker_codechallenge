@@ -38,7 +38,8 @@ export default class SearchForm extends Component {
     }&q=${keywords}&image_type=photo&category=${this.state.category}`;
     let config = {
       Accept: "application/json",
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*"
     };
     fetch(url, config)
       .then(resp => resp.json())
