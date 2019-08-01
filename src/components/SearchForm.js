@@ -36,12 +36,8 @@ export default class SearchForm extends Component {
     let url = `https://pixabay.com/api/?key=${
       process.env.REACT_APP_API_KEY
     }&q=${keywords}&image_type=photo&category=${this.state.category}`;
-    let config = {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*"
-    };
-    fetch(url, config)
+
+    fetch(url)
       .then(resp => resp.json())
       .then(data => {
         this.setState({ keyword: "", category: "" });

@@ -8,7 +8,6 @@ export default class App extends Component {
   render() {
     return (
       <Router>
-        <Redirect to="/welcome" />
         <Route exact path="/welcome" component={() => <Welcome />} />
         <Route exact path="/search" component={() => <Homepage />} />
       </Router>
