@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import SearchForm from "./SearchForm.js";
 import SavedImagesContainer from "./SavedImagesContainer.js";
 import { Button } from "semantic-ui-react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Route, Link } from "react-router-dom";
 
 export default class Homepage extends Component {
   state = { savedImages: [] };

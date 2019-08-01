@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Button } from "semantic-ui-react";
-import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import { BrowserRouter as Route, Redirect } from "react-router-dom";
 
 export default class Welcome extends Component {
   state = { enterSite: false };
